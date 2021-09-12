@@ -1,0 +1,17 @@
+[
+    {
+        "modid": "minecraft_metrics",
+        "name": "MinecraftMetrics",
+        "version": "1.0",
+        "description": "Minecraft Prometheus Exporter",
+        "authorList": [
+            "DmitriyMX"
+        ],
+        "dependencies": [
+            "spongeapi"
+        ],
+        "requiredMods": [
+            "spongeapi"
+        ]
+    }
+]

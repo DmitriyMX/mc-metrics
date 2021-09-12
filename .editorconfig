@@ -1,0 +1,18 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.bat]
+end_of_line = crlf
+
+[*.{java,gradle,groovy}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.{yml,yaml}]
+charset = utf-8
+indent_style = space
+indent_size = 2

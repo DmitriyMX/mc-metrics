@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group 'ru.dmitriymx'
+version '1.0-SNAPSHOT'
+jar.archiveBaseName.set(project.name)
+
+compileJava {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+
+}
+
+dependencies {
+    annotationProcessor('org.projectlombok:lombok:1.18.20')
+    compileOnly('org.projectlombok:lombok:1.18.20')
+
+    compileOnly('io.netty:netty-transport-native-epoll:4.1.24.Final')
+    compileOnly('io.netty:netty-codec-http:4.1.24.Final')
+//    compileOnly('org.slf4j:slf4j-api:1.7.32')
+
+    api('com.typesafe:config:1.4.1')
+}

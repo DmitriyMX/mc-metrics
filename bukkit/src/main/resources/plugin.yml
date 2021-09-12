@@ -1,0 +1,5 @@
+name: MinecraftMetrics
+version: 1.0
+description: 'Minecraft Prometheus Exporter'
+author: DmitriyMX
+main: ru.dmitriymx.minecraft.metrics.bukkit.MetricsPlugin

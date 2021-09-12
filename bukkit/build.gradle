@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group 'ru.dmitriymx'
+version '1.0-SNAPSHOT'
+jar.archiveBaseName.set(project.name)
+
+compileJava {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
+}
+
+dependencies {
+    implementation(project(':core'))
+
+    annotationProcessor('org.projectlombok:lombok:1.18.20')
+    compileOnly('org.projectlombok:lombok:1.18.20')
+
+    compileOnly('org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT') {
+        exclude(module: 'bungeecord-chat')
+        exclude(module: 'commons-lang')
+        exclude(module: 'gson')
+        exclude(module: 'guava')
+        exclude(module: 'json-simple')
+        exclude(module: 'snakeyaml')
+    }
+}
+
+shadowJar {
+    archiveBaseName.set('mc-mectics-bukkit')
+    archiveVersion.set(project.version.toString())
+    archiveClassifier.set('')
+}
